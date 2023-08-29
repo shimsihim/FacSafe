@@ -1,0 +1,60 @@
+# BootCamp Study
+
+## 1강
+
+ROS
+
+Robot Operating System
+
+- 로봇을 개발하는데 있어 필수적인 라이브러리 제공
+- Application 부분만 개발하면 되기때문에 개발 시간, 비용 절약 효과
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6ad10092-1ded-4b05-aaca-96cd00af707a/Untitled.png)
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6ad10092-1ded-4b05-aaca-96cd00af707a/Untitled.png)
+
+DDS(Data Distribution Service)
+
+- 네트워크에 존재하는 통신 객체들을 자동으로 검색하고 데이터의 연관성에 따라 선택적으로 연결을 수행
+- 다수의 로봇, 장치들을 연동하거나 교체하는데 효과적
+
+ROS1과 ROS2의 차이
+
+ROS1 : TCP 통신을 하는 마스터 노드가 직접 노드들을 연결
+
+ROS2 : 마스터가 따로 존재하지 않고 분산 처리, 마스터가 죽어서 작업에 차질이 생길 요소가 없다
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/26aa3f60-b640-4c06-8590-d362e9ee19ad/Untitled.png)
+
+ROS 용어
+
+1. 노드 - 노드는 ROS에서 최소 단위의 실행 프로세스를 가리키는 용어, 즉 하나의 파이썬 스크립트는 하나의 노드이다.
+2. 메세지 - 노드에서 다른 노드로 정보를 전달하는 단방향, 비동기식, 연속성 통신
+3. 패키지 - ROS 소프트웨어의 기본 단위. 패키지는 노드, 라이브러리, 환경설정 파일들을 통합하는 최소의 빌드 단위이며, 배포 단위
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5258db83-2a09-47a6-9992-993c34661715/Untitled.png)
+
+talker 노드 : 메세지를 publish(발행)하는 노드
+
+listener 노드 : 메세지를 subscribe(구독)하는 노드
+
+메세지를 주고받기 위해서는 토픽이라는 메세지의 이름과 메세지의 타입을 알아야 한다
+
+윗 그림에서 토픽은 chatter, 타입은 std msgs/String이며 메세지에 담긴 내용은 “hello world”
+
+listener는 talker에서 통신을 보내면 원하지 않아도 보낼때마다 일방적으로 수신해야 한다
+
+다른 subscribe 노드를 생성해서 메세지의 토픽과 타입을 지정하면 같은 내용을 수신할 수 있다
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0be57c81-321c-49b8-a071-acc740a8b71f/Untitled.png)
+
+ROS 장점
+
+- 노드간 메세지 교환 방법으로 복잡한 프로그램을 나눠 공동 개발 용이
+- 하나의 노드에서 개발을 진행할 때 서로의 알고리즘때문에 속도에 영향이 갈 수도 있다
+- 메세지의 토픽과 타입만 서로 알고 있으면 각자 개발을 하기 쉽다
+- 사용자가 사용할만한 표준 메세지 타입을 미리 만들어두었다
+- 로봇 관련 다양한 패키지 제공
+- 강력한 시각화 도구(RVIZ, RQT, ROSBAG)
+
+## 2강
