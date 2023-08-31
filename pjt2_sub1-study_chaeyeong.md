@@ -4,7 +4,7 @@
 - 명세서 sub1 학습 및 스켈레톤 코드 학습
 - YOLO + OpenCV 이론 학습 및 코드 학습
 
-### 학습 내용
+### 명세서 sub1 학습 내용 
 
 - ROS2 메시지 통신에 대한 이해와 실습
 - 영상 데이터 수신하여 OpenCV 라이브러리 활용
@@ -228,6 +228,7 @@ if __name__ == "__main__":
 ![Untitled](sub1-study/sub1-study/Untitled 7.png)
 
 
+### YOLO + OpenCV 이론 학습 내용
 
 # YOLO
 
