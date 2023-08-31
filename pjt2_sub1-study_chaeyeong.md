@@ -27,7 +27,7 @@ rqt → 토픽으로 나오는 메시지를 모니터할 수 있으며, 노드�
 
 ### 파일 구조
 
-![Untitled](PJT1%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A6%E1%84%89%E1%85%A5%20%E1%84%92%E1%85%A1%E1%86%A8%E1%84%89%E1%85%B3%E1%86%B8%20c7cca15d611d46e5a2564755870cc7a4/Untitled.png)
+![Untitled](sub1-study/sub1-study/Untitled.png)
 
 아래의 노드들은 sub1 폴더 하위에 있음
 
@@ -106,7 +106,7 @@ ssafybridge_launch ← (/hand_control) ← handcontrol
 
 `ros2 run sub1 subscriber`
 
-![Untitled](PJT1%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A6%E1%84%89%E1%85%A5%20%E1%84%92%E1%85%A1%E1%86%A8%E1%84%89%E1%85%B3%E1%86%B8%20c7cca15d611d46e5a2564755870cc7a4/Untitled%201.png)
+![Untitled](sub1-study/sub1-study/Untitled 1.png)
 
 ### (2) controller
 
@@ -116,19 +116,19 @@ ros2 run 패키지명 스크립트 이름(파일명)
 
 `ros2 launch C:\Users\SSAFY\Desktop\mobility-smarthome-skeleton\ros2_smart_home\ssafy_bridge\launch\ssafybridge_launch.py`
 
-![Untitled](PJT1%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A6%E1%84%89%E1%85%A5%20%E1%84%92%E1%85%A1%E1%86%A8%E1%84%89%E1%85%B3%E1%86%B8%20c7cca15d611d46e5a2564755870cc7a4/Untitled%202.png)
+![Untitled](sub1-study/sub1-study/Untitled 2.png)
 
 **⇒ run 컨트롤러**
 
 `ros2 run sub1 controller`
 
-![Untitled](PJT1%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A6%E1%84%89%E1%85%A5%20%E1%84%92%E1%85%A1%E1%86%A8%E1%84%89%E1%85%B3%E1%86%B8%20c7cca15d611d46e5a2564755870cc7a4/Untitled%203.png)
+![Untitled](sub1-study/sub1-study/Untitled 3.png)
 
 **⇒ rqt 실행**
 
 `rqt`
 
-![Untitled](PJT1%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A6%E1%84%89%E1%85%A5%20%E1%84%92%E1%85%A1%E1%86%A8%E1%84%89%E1%85%B3%E1%86%B8%20c7cca15d611d46e5a2564755870cc7a4/Untitled%204.png)
+![Untitled](sub1-study/sub1-study/Untitled 4.png)
 
 ---
 
@@ -142,9 +142,9 @@ call C:\Users\SSAFY\Desktop\mobility-smarthome-skeleton\install\local_setup.bat
 
 `ros2 launch c:\Users\SSAFY\Desktop\mobility-smarthome-skeleton\ros2_smart_home\ssafy_bridge\launch\ssafybridge_launch.py`
 
-![Untitled](PJT1%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A6%E1%84%89%E1%85%A5%20%E1%84%92%E1%85%A1%E1%86%A8%E1%84%89%E1%85%B3%E1%86%B8%20c7cca15d611d46e5a2564755870cc7a4/Untitled%205.png)
+![Untitled](sub1-study/sub1-study/Untitled 5.png)
 
-![Untitled](PJT1%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A6%E1%84%89%E1%85%A5%20%E1%84%92%E1%85%A1%E1%86%A8%E1%84%89%E1%85%B3%E1%86%B8%20c7cca15d611d46e5a2564755870cc7a4/Untitled%206.png)
+![Untitled](sub1-study/sub1-study/Untitled 6.png)
 
 ### 카메라 인식
 
@@ -225,7 +225,7 @@ if __name__ == "__main__":
     main()
 ```
 
-![Untitled](PJT1%20%E1%84%86%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A6%E1%84%89%E1%85%A5%20%E1%84%92%E1%85%A1%E1%86%A8%E1%84%89%E1%85%B3%E1%86%B8%20c7cca15d611d46e5a2564755870cc7a4/Untitled%207.png)
+![Untitled](sub1-study/sub1-study/Untitled 7.png)
 
 
 
@@ -249,7 +249,7 @@ if __name__ == "__main__":
     - NMS는 이미지에 얼굴이 여러 개 있다고 판단하는 것이 아니라, 동일한 객체에 대한 상자 중 가장 높은 확률을 가진 상자를 선택
     - 즉, 아래 사진과 같이 모든 bounding box 에 object 가 존재하지만,  가장 높은  objectiveness score 을 가지는 녹색 box 만을 선택한다.
     
-    ![Untitled](YOLO%20ad9e11a23ba24c469d9a690296942c29/Untitled.png)
+    ![Untitled](YOLO_OpenCV/YOLO-OpenCV-study/Untitled.png)
     
 
 NMS 관련 참고사이트:
@@ -391,13 +391,13 @@ cv2.destroyAllWindows()
 
 ### test1 → laptop, cup, keyboard
 
-![Untitled](YOLO%20ad9e11a23ba24c469d9a690296942c29/Untitled%201.png)
+![Untitled](YOLO_OpenCV/YOLO-OpenCV-study/Untitled 1.png)
 
 ### test2 → person
 
-![Untitled](YOLO%20ad9e11a23ba24c469d9a690296942c29/Untitled%202.png)
+![Untitled](YOLO_OpenCV/YOLO-OpenCV-study/Untitled 2.png)
 
-![Untitled](YOLO%20ad9e11a23ba24c469d9a690296942c29/Untitled%203.png)
+![Untitled](YOLO_OpenCV/YOLO-OpenCV-study/Untitled 3.png)
 
 > 참고사이트
 > 
