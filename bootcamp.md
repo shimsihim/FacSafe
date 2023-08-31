@@ -1,50 +1,79 @@
-# BootCamp Study
+ROS(Robot Operating System)
 
-## 1강
+빌드하기 :  1,2,3, 과정 모두 실행 필요~~~~
+ros2 배치파일 실행
+ call C:\dev\ros2-windows\setup.bat
+터미널 창에서 프로젝트 폴더로 이동 후 빌드(Native를 관리자 권한으로!)
+cd C:\Users\SSAFY\Desktop\skeleton\mobility-smarthome-skeleton\ros2_smart_home
+colcon build
+일부 빌드 시
+colcon build --packages-select sub1(선택한 패키지)
+빌드 완료 후 노드를 실행, ros실행위해 setup.bat을 call한것 처럼 
+워크스페이스 안의 패키지를 사용하기 위해서는 내부의 bat파일 call필요
+즉, call C:\dev\ros2-windows\setup.bat
+     call C:\Users\SSAFY\Desktop\skeleton\mobility-smarthome-skeleton\ros2_smart_home\install\local_setup.bat
+런치파일 있는 곳으로 가서
+ros2 launch C:\Users\SSAFY\Desktop\skeleton\mobility-smarthome-skeleton\ros2_smart_home\ssafy_bridge\launch\ssafybridge_launch.py
+위의 런치파일은 무조건 틀어놓아야 시뮬레이터와 통신
+rqt(시각화 툴)
 
-ROS
 
-Robot Operating System
+기존의 것이 아닌 메타 운영체제⇒ os위에 설치하여 os 기능을 이용해 스케줄링, 감시 ,에러처리
+⇒ 미들웨어, 소프트웨어 프레임워크라고 함
+⇒ 새로운 os가 아님
+이번 프로젝트는 ros2를 사용
 
-- 로봇을 개발하는데 있어 필수적인 라이브러리 제공
-- Application 부분만 개발하면 되기때문에 개발 시간, 비용 절약 효과
+ros1에서의  tcpros, udpdros가 dds계층으로 바뀜(데이터 디스투리부션 서비스 , 네트워크에 존재하는 통ㅇ신객체 자동 검색, 데이터 연관성에 따라 선택적으로 연결)
 
-DDS(Data Distribution Service)
+노드 ⇒ 최소단위 실행 프로세스
+메시지 ⇒ 노드끼리 데이터 주고 받는 것
+talker는 메시지를 pub하는 노드, listner는 sub하는 노드
+토픽과 메시지 타입을 알아햐 서로 메시지를 주고 받을 수 있음
+여기서는 토픽이 chatter , 메시지 타입이 std msgs/String
+담긴 내용이 hello World.
+리스너가 원하지 않을 때도 토커가 말하면 메시지를 받음 ⇒ 비 동기식 연속성 통신
+패키지 ⇒ ros 소프트웨어의 기본 단위 , 빌드단위, 배포단위
+여러개의 노드들을 가질 수 있음.
+ROS장점
 
-- 네트워크에 존재하는 통신 객체들을 자동으로 검색하고 데이터의 연관성에 따라 선택적으로 연결을 수행
-- 다수의 로봇, 장치들을 연동하거나 교체하는데 효과적
+메시지통신을 사용해 하나의 노드에 대해서 공유하지 않고  
+복잡한 프로그램을 여러사람이 나눠서 공동 개발에 용이
+노드간에 토픽과 메시지 타입을 알려주면 되어서 서로 영향을 주지 않고 쉽게 연결이 가능
+또한, 기능별로 만들었기 떄문에 어떤 노드에서 메시지가 나오지 않는지 확인을 통해 오류 확인 편리
 
-ROS1과 ROS2의 차이
+실습
+바탕화면에 catkin_ws  폴더 만들기
+폴더 내에 src폴더 넣기(여기부터가 프로젝트들 넣는 곳)
 
-ROS1 : TCP 통신을 하는 마스터 노드가 직접 노드들을 연결
 
-ROS2 : 마스터가 따로 존재하지 않고 분산 처리, 마스터가 죽어서 작업에 차질이 생길 요소가 없다
+    src폴더에 들어가서 
+    기존에 받아놨던 setup.bat있는 폴더에 해당 파일 호출
+     패키지 생성(이름은 my_package)
+ros2 pkg create --build-type ament_python --node-name my_node my_pakage
+빌드하기
 
-ROS 용어
 
-1. 노드 - 노드는 ROS에서 최소 단위의 실행 프로세스를 가리키는 용어, 즉 하나의 파이썬 스크립트는 하나의 노드이다.
-2. 메세지 - 노드에서 다른 노드로 정보를 전달하는 단방향, 비동기식, 연속성 통신
-3. 패키지 - ROS 소프트웨어의 기본 단위. 패키지는 노드, 라이브러리, 환경설정 파일들을 통합하는 최소의 빌드 단위이며, 배포 단위
+빌드 완료 후 노드를 실행, ros실행위해 setup.bat을 call한것 처럼 
+워크스페이스 안의 패키지를 사용하기 위해서는 내부의 bat파일 call필요
+즉, call C:\dev\ros2-windows\setup.bat
+     call C:\Users\SSAFY\Desktop\catkin_ws\install\local_setup.bat
+2개는 명령창 킬 떄 마다 반복
 
-talker 노드 : 메세지를 publish(발행)하는 노드
 
-listener 노드 : 메세지를 subscribe(구독)하는 노드
+노드 실행 (ros2 run my_package my_node)
 
-메세지를 주고받기 위해서는 토픽이라는 메세지의 이름과 메세지의 타입을 알아야 한다
+나의 노드 직접 만들기(https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html)
+my_package패키지의 my_package폴더 안에 publisher_member_function.py만들고 
+위의 링크의 publisher_member_function.py 복붙
 
-윗 그림에서 토픽은 chatter, 타입은 std msgs/String이며 메세지에 담긴 내용은 “hello world”
+8.이제 스크립트가 생성되었지만 노드가 생성된 것은 아님 ⇒ 패키지 내에 setup.py파일에 우리가 만든 스크립트 이름을 정의해야 함
 
-listener는 talker에서 통신을 보내면 원하지 않아도 보낼때마다 일방적으로 수신해야 한다
+이후 새롭게 빌드해야 함
 
-다른 subscribe 노드를 생성해서 메세지의 토픽과 타입을 지정하면 같은 내용을 수신할 수 있다
 
-ROS 장점
+위의 것은 SubScriber 를 만드는 법
 
-- 노드간 메세지 교환 방법으로 복잡한 프로그램을 나눠 공동 개발 용이
-- 하나의 노드에서 개발을 진행할 때 서로의 알고리즘때문에 속도에 영향이 갈 수도 있다
-- 메세지의 토픽과 타입만 서로 알고 있으면 각자 개발을 하기 쉽다
-- 사용자가 사용할만한 표준 메세지 타입을 미리 만들어두었다
-- 로봇 관련 다양한 패키지 제공
-- 강력한 시각화 도구(RVIZ, RQT, ROSBAG)
+명령프롬프트 킬 떄 마다 ros2명령어 치기 는 불가능
+런치파일 실행도 런치파일이 있는 곳으로 가서 
+ros2 launch test_launch.py
 
-## 2강
