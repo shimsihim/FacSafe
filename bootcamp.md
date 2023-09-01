@@ -2,7 +2,7 @@
 
 ## 1강
 
-ROS
+ROS 
 
 Robot Operating System
 
