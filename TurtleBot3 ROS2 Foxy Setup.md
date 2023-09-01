@@ -81,7 +81,7 @@ $ cd /media/$USER/writable/etc/netplan
 $ sudo nano 50-cloud-init.yaml
 ```
 
-![Untitled](TurtleBot3%20ROS2%20Foxy%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8E%E1%85%B5%20ae72420d5a574c32bd94d5b9695e5e7c/Untitled.png)
+![Untitled](TurtleBot3 ROS2 Foxy 설치 ae72420d5a574c32bd94d5b9695e5e7c/Untitled.png)
 
 저장 후 라즈베리파이에 MicroSD카드 삽입후 키보드와 모니터를 연결한다. 그 후 ubuntu에 id와 password입력 후 로그인
 
@@ -89,7 +89,7 @@ $ sudo nano 50-cloud-init.yaml
     
     -ROS2 DDS 통신에는 동일한 네트워크 환경에서 통신하기 위해서는Remote PC와 TurtleBot3의 ROS_DOMAIN_ID가 일치해야한다. TurtleBot3의 기본 ROS도메인 ID는 ***.bashrc*** 파일 에 설정되어 있습다 . 동일한 네트워크에 동일한 ID가 존재할 경우 충돌을 피하기 위해 ID를 수정해야함.
     
-    ![Untitled](TurtleBot3%20ROS2%20Foxy%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8E%E1%85%B5%20ae72420d5a574c32bd94d5b9695e5e7c/Untitled%201.png)
+    ![Untitled](TurtleBot3 ROS2 Foxy 설치 ae72420d5a574c32bd94d5b9695e5e7c/Untitled 1.png)
     
 - LDS-02구성
 
@@ -172,7 +172,7 @@ $ tar -xvf ./opencr_update.tar.bz2
 
 -성공적인 업로드 화면
 
-![Untitled](TurtleBot3%20ROS2%20Foxy%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8E%E1%85%B5%20ae72420d5a574c32bd94d5b9695e5e7c/Untitled%202.png)
+![Untitled](TurtleBot3 ROS2 Foxy 설치 ae72420d5a574c32bd94d5b9695e5e7c/Untitled 2.png)
 
 # 4. Bring up
 
@@ -189,7 +189,7 @@ $ export TURTLEBOT3_MODEL=burger
 $ ros2 launch turtlebot3_bringup robot.launch.py
 ```
 
-![Untitled](TurtleBot3%20ROS2%20Foxy%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8E%E1%85%B5%20ae72420d5a574c32bd94d5b9695e5e7c/Untitled%203.png)
+![Untitled](TurtleBot3 ROS2 Foxy 설치 ae72420d5a574c32bd94d5b9695e5e7c/Untitled 3.png)
 
 대충 이런 창 뜨면 성공한거임
 
